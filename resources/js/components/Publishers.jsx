@@ -12,6 +12,7 @@ export default class Publishers extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderPublishers = this.renderPublishers.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     // handle change
@@ -43,6 +44,16 @@ export default class Publishers extends Component {
             });
     }
 
+    // handle delete
+    handleDelete(id) {
+        // remove from local state
+        const isNotId = publisher => publisher.id !== id;
+        const updatedPublishers = this.state.publishers.filter(isNotId);
+        this.setState({ publishers: updatedPublishers });
+        // make delete request to the backend
+        axios.delete(`/publishers/${id}`);
+    }
+
     // render publishers
     renderPublishers() {
         console.log('Atores:', this.state.publishers)
@@ -50,6 +61,13 @@ export default class Publishers extends Component {
             <tr key={publisher.id}>
                 <td>{publisher.id}</td>
                 <td>{publisher.name}</td>
+                <td>
+                    <button
+                        onClick={() => this.handleDelete(publisher.id)}
+                        className="btn btn-sm btn-warning float-right"
+                    >
+                        Delete
+                    </button></td>
             </tr >
         ));
     }
@@ -74,48 +92,48 @@ export default class Publishers extends Component {
     render() {
         return (
             <div className="container">
-            <div className="row">
-                <div className="col-md-12">
-                    <div className="card">
-                        <div className="card-header text-center">Editoras</div>
-                        <div className="card-body">
-                            <form onSubmit={this.handleSubmit}>
-                                <div className="form-group">
-                                    <label className="text-left">Nome<span className="text-danger">*</span></label>
-                                    <input
-                                        onChange={this.handleChange}
-                                        value={this.state.nome}
-                                        type="text"
-                                        name="nome"
-                                        className="form-control"
-                                        rows="1"
-                                        placeholder="nome da editora"
-                                        required
-                                    />
-                                </div>
-                                <button type="submit" className="btn btn-primary">
-                                    Adicionar Editora
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="card">
+                            <div className="card-header text-center">Editoras</div>
+                            <div className="card-body">
+                                <form onSubmit={this.handleSubmit}>
+                                    <div className="form-group">
+                                        <label className="text-left">Nome<span className="text-danger">*</span></label>
+                                        <input
+                                            onChange={this.handleChange}
+                                            value={this.state.nome}
+                                            type="text"
+                                            name="nome"
+                                            className="form-control"
+                                            rows="1"
+                                            placeholder="nome da editora"
+                                            required
+                                        />
+                                    </div>
+                                    <button type="submit" className="btn btn-primary">
+                                        Adicionar Editora
                                 </button>
-                            </form>
-                            <hr />
-                            <div className="table-responsive">
-                                <table className="table table-hover table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Nome</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {this.renderPublishers()}
-                                    </tbody>
-                                </table>
+                                </form>
+                                <hr />
+                                <div className="table-responsive">
+                                    <table className="table table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nome</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {this.renderPublishers()}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         );
     }
 }

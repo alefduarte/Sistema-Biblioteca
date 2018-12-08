@@ -69457,6 +69457,7 @@ var Books = function (_Component) {
         _this.handleChange = _this.handleChange.bind(_this);
         _this.handleSubmit = _this.handleSubmit.bind(_this);
         _this.renderBooks = _this.renderBooks.bind(_this);
+        _this.handleDelete = _this.handleDelete.bind(_this);
         return _this;
     }
 
@@ -69502,12 +69503,26 @@ var Books = function (_Component) {
                 console.log('Errors:', error.response.data);
             });
         }
+    }, {
+        key: 'handleDelete',
+        value: function handleDelete(id) {
+            // remove from local state
+            var isNotId = function isNotId(book) {
+                return book.id !== id;
+            };
+            var updatedBooks = this.state.books.filter(isNotId);
+            this.setState({ books: updatedBooks });
+            // make delete request to the backend
+            axios.delete('/books/' + id);
+        }
 
         // render books
 
     }, {
         key: 'renderBooks',
         value: function renderBooks() {
+            var _this3 = this;
+
             console.log('Books:', this.state.books);
             return this.state.books.map(function (book) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -69554,6 +69569,20 @@ var Books = function (_Component) {
                         'td',
                         null,
                         book.author_id
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'td',
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'button',
+                            {
+                                onClick: function onClick() {
+                                    return _this3.handleDelete(book.id);
+                                },
+                                className: 'btn btn-sm btn-warning float-right'
+                            },
+                            'Delete'
+                        )
                     )
                 );
             });
@@ -69564,10 +69593,10 @@ var Books = function (_Component) {
     }, {
         key: 'getBooks',
         value: function getBooks() {
-            var _this3 = this;
+            var _this4 = this;
 
             axios.get('/books').then(function (response) {
-                return _this3.setState({
+                return _this4.setState({
                     books: [].concat(_toConsumableArray(response.data.books))
                 });
             }).catch(function (error) {
@@ -70055,6 +70084,7 @@ var Authors = function (_Component) {
         _this.handleChange = _this.handleChange.bind(_this);
         _this.handleSubmit = _this.handleSubmit.bind(_this);
         _this.renderAuthors = _this.renderAuthors.bind(_this);
+        _this.handleDelete = _this.handleDelete.bind(_this);
         return _this;
     }
 
@@ -70092,11 +70122,28 @@ var Authors = function (_Component) {
             });
         }
 
+        // handle delete
+
+    }, {
+        key: 'handleDelete',
+        value: function handleDelete(id) {
+            // remove from local state
+            var isNotId = function isNotId(author) {
+                return author.id !== id;
+            };
+            var updatedAuthors = this.state.authors.filter(isNotId);
+            this.setState({ authors: updatedAuthors });
+            // make delete request to the backend
+            axios.delete('/authors/' + id);
+        }
+
         // render authors
 
     }, {
         key: 'renderAuthors',
         value: function renderAuthors() {
+            var _this3 = this;
+
             console.log('Atores:', this.state.authors);
             return this.state.authors.map(function (author) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -70111,6 +70158,20 @@ var Authors = function (_Component) {
                         'td',
                         null,
                         author.name
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'td',
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'button',
+                            {
+                                onClick: function onClick() {
+                                    return _this3.handleDelete(author.id);
+                                },
+                                className: 'btn btn-sm btn-warning float-right'
+                            },
+                            'Delete'
+                        )
                     )
                 );
             });
@@ -70121,10 +70182,10 @@ var Authors = function (_Component) {
     }, {
         key: 'getAuthors',
         value: function getAuthors() {
-            var _this3 = this;
+            var _this4 = this;
 
             axios.get('/authors').then(function (response) {
-                return _this3.setState({
+                return _this4.setState({
                     authors: [].concat(_toConsumableArray(response.data.authors))
                 });
             }).catch(function (error) {
@@ -70277,6 +70338,7 @@ var Publishers = function (_Component) {
         _this.handleChange = _this.handleChange.bind(_this);
         _this.handleSubmit = _this.handleSubmit.bind(_this);
         _this.renderPublishers = _this.renderPublishers.bind(_this);
+        _this.handleDelete = _this.handleDelete.bind(_this);
         return _this;
     }
 
@@ -70314,11 +70376,28 @@ var Publishers = function (_Component) {
             });
         }
 
+        // handle delete
+
+    }, {
+        key: 'handleDelete',
+        value: function handleDelete(id) {
+            // remove from local state
+            var isNotId = function isNotId(publisher) {
+                return publisher.id !== id;
+            };
+            var updatedPublishers = this.state.publishers.filter(isNotId);
+            this.setState({ publishers: updatedPublishers });
+            // make delete request to the backend
+            axios.delete('/publishers/' + id);
+        }
+
         // render publishers
 
     }, {
         key: 'renderPublishers',
         value: function renderPublishers() {
+            var _this3 = this;
+
             console.log('Atores:', this.state.publishers);
             return this.state.publishers.map(function (publisher) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -70333,6 +70412,20 @@ var Publishers = function (_Component) {
                         'td',
                         null,
                         publisher.name
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'td',
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'button',
+                            {
+                                onClick: function onClick() {
+                                    return _this3.handleDelete(publisher.id);
+                                },
+                                className: 'btn btn-sm btn-warning float-right'
+                            },
+                            'Delete'
+                        )
                     )
                 );
             });
@@ -70343,10 +70436,10 @@ var Publishers = function (_Component) {
     }, {
         key: 'getPublishers',
         value: function getPublishers() {
-            var _this3 = this;
+            var _this4 = this;
 
             axios.get('/publishers').then(function (response) {
-                return _this3.setState({
+                return _this4.setState({
                     publishers: [].concat(_toConsumableArray(response.data.publishers))
                 });
             }).catch(function (error) {

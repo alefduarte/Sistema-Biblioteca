@@ -106,6 +106,6 @@ class AuthorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Author::findOrFail($id)->delete();
     }
 }

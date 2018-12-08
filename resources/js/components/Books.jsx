@@ -18,6 +18,7 @@ export default class Books extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderBooks = this.renderBooks.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     // handle change
@@ -58,6 +59,15 @@ export default class Books extends Component {
             });
     }
 
+    handleDelete(id) {
+        // remove from local state
+        const isNotId = book => book.id !== id;
+        const updatedBooks = this.state.books.filter(isNotId);
+        this.setState({ books: updatedBooks });
+        // make delete request to the backend
+        axios.delete(`/books/${id}`);
+    }
+
     // render books
     renderBooks() {
         console.log('Books:', this.state.books)
@@ -71,6 +81,13 @@ export default class Books extends Component {
                 <td>{book.stock}</td>
                 <td>{book.publisher_id}</td>
                 <td>{book.author_id}</td>
+                <td>
+                    <button
+                        onClick={() => this.handleDelete(book.id)}
+                        className="btn btn-sm btn-warning float-right"
+                    >
+                        Delete
+                    </button></td>
             </tr >
         ));
     }

@@ -12,6 +12,7 @@ export default class Authors extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderAuthors = this.renderAuthors.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     // handle change
@@ -43,6 +44,17 @@ export default class Authors extends Component {
             });
     }
 
+    // handle delete
+    handleDelete(id) {
+        // remove from local state
+        const isNotId = author => author.id !== id;
+        const updatedAuthors = this.state.authors.filter(isNotId);
+        this.setState({ authors: updatedAuthors });
+        // make delete request to the backend
+        axios.delete(`/authors/${id}`);
+    }
+
+
     // render authors
     renderAuthors() {
         console.log('Atores:', this.state.authors)
@@ -50,6 +62,13 @@ export default class Authors extends Component {
             <tr key={author.id}>
                 <td>{author.id}</td>
                 <td>{author.name}</td>
+                <td>
+                    <button
+                        onClick={() => this.handleDelete(author.id)}
+                        className="btn btn-sm btn-warning float-right"
+                    >
+                        Delete
+                    </button></td>
             </tr >
         ));
     }

@@ -72,7 +72,7 @@ class BookController extends Controller
 
 		// return task with user object
         return response()->json([
-            'book' => $book,
+            'book' => $books,
             'message' => 'Success'
         ], 200);
     }   
@@ -119,6 +119,6 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Book::findOrFail($id)->delete();
     }
 }
