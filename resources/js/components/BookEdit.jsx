@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import ReactDOM from 'react-dom';
 
 export default class Books extends Component {
     constructor(props) {
@@ -18,9 +16,6 @@ export default class Books extends Component {
         // bind
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.renderBooks = this.renderBooks.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
-        this.handleUpdate = this.handleUpdate.bind(this);
     }
 
     // handle change
@@ -31,7 +26,7 @@ export default class Books extends Component {
     handleSubmit(e) {
         e.preventDefault();
         axios
-            .post('/books', {
+            .put(`/books/${this.props.match.params.id}`, {
                 title: this.state.title,
                 sellingPrice: this.state.sellingPrice,
                 loanPrice: this.state.loanPrice,
@@ -41,69 +36,28 @@ export default class Books extends Component {
                 author_id: this.state.author_id
             })
             .then(response => {
-                console.log('from handle submit', response.data.book);
+                console.log('successfully edited the publisher', response.data.book);
                 // set state
-                this.setState({
-                    books: [response.data.book, ...this.state.books]
-                });
-                // then clear the value of textarea
-                this.setState({
-                    title: '',
-                    sellingPrice: '',
-                    loanPrice: '',
-                    ISBN: '',
-                    stock: '',
-                    publisher_id: '',
-                    author_id: ''
-                });
+                this.props.history.push('/book');
             }).catch((error) => {
                 console.log('Errors:', error.response.data)
             });
     }
 
-    handleDelete(id) {
-        // remove from local state
-        const isNotId = book => book.id !== id;
-        const updatedBooks = this.state.books.filter(isNotId);
-        this.setState({ books: updatedBooks });
-        // make delete request to the backend
-        axios.delete(`/books/${id}`);
-    }
-
-    // render books
-    renderBooks() {
-        console.log('Books:', this.state.books)
-        return this.state.books.map(book => (
-            <tr key={book.id}>
-                <td>{book.id}</td>
-                <td>{book.title}</td>
-                <td>R$ {book.sellingPrice}</td>
-                <td>R$ {book.loanPrice}</td>
-                <td>{book.ISBN}</td>
-                <td>{book.stock}</td>
-                <td>{book.publisher_id}</td>
-                <td>{book.author_id}</td>
-                <td>
-                <span className="nowrap">
-                    <Link className="btn btn-sm btn-success float-right" to={`book/${book.id}/edit`}>
-                        Edit</Link>
-                    <button
-                        onClick={() => this.handleDelete(book.id)}
-                        className="btn btn-sm btn-warning float-right"
-                    >
-                        Delete
-                    </button></span></td>
-            </tr >
-        ));
-    }
-
     // get all books from backend
     getBooks() {
-        axios.get('/books').then((
+        axios.get(`/books/${this.props.match.params.id}/edit`).then((
             response
         ) =>
             this.setState({
-                books: [...response.data.books]
+                books: response.data.book,
+                title: response.data.book.title,
+                sellingPrice: response.data.book.sellingPrice,
+                loanPrice: response.data.book.loanPrice,
+                ISBN: response.data.book.ISBN,
+                stock: response.data.book.stock,
+                publisher_id: response.data.book.publisher_id,
+                author_id: response.data.book.author_id
             })
         ).catch((error) => {
             console.log('Errors:', error.response.data)
@@ -121,6 +75,7 @@ export default class Books extends Component {
     }
 
     render() {
+        console.log(this.props.match.params.id);
         return (
             <div className="container">
                 <div className="row">
@@ -209,30 +164,9 @@ export default class Books extends Component {
                                         />
                                     </div>
                                     <button type="submit" className="btn btn-primary">
-                                        Adicionar Livro
+                                        Atualizar Livro
                                     </button>
                                 </form>
-                                <hr />
-                                <div className="table-responsive">
-                                    <table className="table table-hover table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Título</th>
-                                                <th>Preço de Venda</th>
-                                                <th>Preço de Empréstimo</th>
-                                                <th>ISBN</th>
-                                                <th>Quant Etoque</th>
-                                                <th>Editora</th>
-                                                <th>Autor</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {this.renderBooks()}
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
                         </div>
                     </div>

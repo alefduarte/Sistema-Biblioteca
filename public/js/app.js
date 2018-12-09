@@ -19149,21 +19149,27 @@ var generatePath = function generatePath() {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Main__ = __webpack_require__(97);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_0__Main__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_0__Main__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Footer__ = __webpack_require__(98);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_1__Footer__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_1__Footer__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Books__ = __webpack_require__(99);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__Books__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_2__Books__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Home__ = __webpack_require__(100);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_3__Home__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_3__Home__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Authors__ = __webpack_require__(105);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_4__Authors__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Publishers__ = __webpack_require__(106);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_5__Publishers__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_5__Publishers__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__About__ = __webpack_require__(107);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_6__About__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__AuthorEdit__ = __webpack_require__(117);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_7__AuthorEdit__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__PublisherEdit__ = __webpack_require__(118);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_8__PublisherEdit__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__BookEdit__ = __webpack_require__(120);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_9__BookEdit__["a"]; });
+
+
 
 
 
@@ -44093,8 +44099,9 @@ if (document.getElementById('root')) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Switch */],
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/:id/edit', component: __WEBPACK_IMPORTED_MODULE_4__components___["b" /* AuthorEdit */], exact: true }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/author', component: __WEBPACK_IMPORTED_MODULE_4__components___["c" /* Authors */], exact: true }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/author/:id/edit', component: __WEBPACK_IMPORTED_MODULE_4__components___["b" /* AuthorEdit */], exact: true }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/publisher/:id/edit', component: __WEBPACK_IMPORTED_MODULE_4__components___["i" /* PublisherEdit */], exact: true }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/book/:id/edit', component: __WEBPACK_IMPORTED_MODULE_4__components___["d" /* BookEdit */], exact: true }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__App_App__["a" /* default */], null)
             )
         )
@@ -69257,8 +69264,8 @@ var App = function App() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     'div',
     null,
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components___["g" /* Main */], null),
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components___["e" /* Footer */], null)
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components___["h" /* Main */], null),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components___["f" /* Footer */], null)
   );
 };
 
@@ -69284,9 +69291,9 @@ var Main = function Main() {
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Switch */],
       null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/home', component: __WEBPACK_IMPORTED_MODULE_2____["f" /* Home */] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/book', component: __WEBPACK_IMPORTED_MODULE_2____["d" /* Books */] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/publisher', component: __WEBPACK_IMPORTED_MODULE_2____["h" /* Publishers */] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/home', component: __WEBPACK_IMPORTED_MODULE_2____["g" /* Home */] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/book', component: __WEBPACK_IMPORTED_MODULE_2____["e" /* Books */] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/publisher', component: __WEBPACK_IMPORTED_MODULE_2____["j" /* Publishers */] }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/author', component: __WEBPACK_IMPORTED_MODULE_2____["c" /* Authors */] }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/about', component: __WEBPACK_IMPORTED_MODULE_2____["a" /* About */] })
     )
@@ -69435,8 +69442,9 @@ var Footer = function Footer() {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_dom__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -69448,6 +69456,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -69475,6 +69484,7 @@ var Books = function (_Component) {
         _this.handleSubmit = _this.handleSubmit.bind(_this);
         _this.renderBooks = _this.renderBooks.bind(_this);
         _this.handleDelete = _this.handleDelete.bind(_this);
+        _this.handleUpdate = _this.handleUpdate.bind(_this);
         return _this;
     }
 
@@ -69591,14 +69601,23 @@ var Books = function (_Component) {
                         'td',
                         null,
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'button',
-                            {
-                                onClick: function onClick() {
-                                    return _this3.handleDelete(book.id);
+                            'span',
+                            { className: 'nowrap' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                { className: 'btn btn-sm btn-success float-right', to: 'book/' + book.id + '/edit' },
+                                'Edit'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'button',
+                                {
+                                    onClick: function onClick() {
+                                        return _this3.handleDelete(book.id);
+                                    },
+                                    className: 'btn btn-sm btn-warning float-right'
                                 },
-                                className: 'btn btn-sm btn-warning float-right'
-                            },
-                            'Delete'
+                                'Delete'
+                            )
                         )
                     )
                 );
@@ -69626,6 +69645,15 @@ var Books = function (_Component) {
         key: 'componentWillMount',
         value: function componentWillMount() {
             this.getBooks();
+        }
+    }, {
+        key: 'handleUpdate',
+        value: function handleUpdate(id) {
+            var _this5 = this;
+
+            axios.put('/books/' + id).then(function (response) {
+                _this5.getBooks();
+            });
         }
     }, {
         key: 'render',
@@ -69855,7 +69883,8 @@ var Books = function (_Component) {
                                                     'th',
                                                     null,
                                                     'Autor'
-                                                )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('th', null)
                                             )
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -70070,9 +70099,9 @@ module.exports = "/images/publisher.png?e339bc6422f7c9f2fbab4c1425ebba48";
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_dom__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -70183,6 +70212,11 @@ var Authors = function (_Component) {
                         'td',
                         null,
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                            { className: 'btn btn-sm btn-success float-right', to: 'author/' + author.id + '/edit' },
+                            'Edit'
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'button',
                             {
                                 onClick: function onClick() {
@@ -70191,15 +70225,6 @@ var Authors = function (_Component) {
                                 className: 'btn btn-sm btn-warning float-right'
                             },
                             'Delete'
-                        )
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'td',
-                        null,
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-                            { className: 'btn btn-sm btn-success', to: '/' + author.id + '/edit' },
-                            'Edit'
                         )
                     )
                 );
@@ -70278,7 +70303,7 @@ var Authors = function (_Component) {
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
                                             onChange: this.handleChange,
-                                            value: this.state.nome,
+                                            value: this.state.name,
                                             type: 'text',
                                             name: 'nome',
                                             className: 'form-control',
@@ -70315,7 +70340,8 @@ var Authors = function (_Component) {
                                                     'th',
                                                     null,
                                                     'Nome'
-                                                )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('th', null)
                                             )
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -70346,8 +70372,7 @@ var Authors = function (_Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(15);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -70378,6 +70403,7 @@ var Publishers = function (_Component) {
         _this.handleSubmit = _this.handleSubmit.bind(_this);
         _this.renderPublishers = _this.renderPublishers.bind(_this);
         _this.handleDelete = _this.handleDelete.bind(_this);
+        _this.handleUpdate = _this.handleUpdate.bind(_this);
         return _this;
     }
 
@@ -70456,6 +70482,11 @@ var Publishers = function (_Component) {
                         'td',
                         null,
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                            { className: 'btn btn-sm btn-success float-right', to: '/publisher/' + publisher.id + '/edit' },
+                            'Edit'
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'button',
                             {
                                 onClick: function onClick() {
@@ -70491,6 +70522,15 @@ var Publishers = function (_Component) {
         key: 'componentWillMount',
         value: function componentWillMount() {
             this.getPublishers();
+        }
+    }, {
+        key: 'handleUpdate',
+        value: function handleUpdate(id) {
+            var _this5 = this;
+
+            axios.put('/publishers/' + id).then(function (response) {
+                _this5.getPublishers();
+            });
         }
     }, {
         key: 'render',
@@ -70533,12 +70573,11 @@ var Publishers = function (_Component) {
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
                                             onChange: this.handleChange,
-                                            value: this.state.nome,
+                                            value: this.state.name,
                                             type: 'text',
                                             name: 'nome',
                                             className: 'form-control',
                                             rows: '1',
-                                            placeholder: 'nome da editora',
                                             required: true
                                         })
                                     ),
@@ -70639,7 +70678,7 @@ var Home = function Home() {
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'h1',
                             null,
-                            'NOSSO TIME'
+                            'NOSSA EQUIPE'
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', { className: 'star-dark mb-5' })
                     )
@@ -70660,7 +70699,7 @@ var Home = function Home() {
                                 '\xC1lef Duarte'
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'p',
+                                'h5',
                                 null,
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'strong',
@@ -70671,7 +70710,7 @@ var Home = function Home() {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'p',
                                 null,
-                                'Desenvolvimento de ...'
+                                'Programa\xE7\xE3o Front-end e Back-end'
                             )
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -70731,7 +70770,7 @@ var Home = function Home() {
                                 'Marina Batista'
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'p',
+                                'h5',
                                 null,
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'strong',
@@ -70742,7 +70781,9 @@ var Home = function Home() {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'p',
                                 null,
-                                'Desenvolvimento de ...'
+                                'Modelagem e Implementa\xE7\xE3o do Banco de Dados',
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                                'Programa\xE7\xE3o Front-end'
                             )
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -70849,7 +70890,7 @@ exports = module.exports = __webpack_require__(112)(false);
 
 
 // module
-exports.push([module.i, "/*!\r\n * Start Bootstrap - Freelancer v5.0.0 (https://startbootstrap.com/template-overviews/freelancer)\r\n * Copyright 2013-2018 Start Bootstrap\r\n * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-freelancer/blob/master/LICENSE)\r\n */\nbody {\n  font-family: Lato; }\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-weight: 700;\n  font-family: Montserrat; }\n\nfooter {\n  width: 100%;\n  background-color: #18bc9c;\n  min-height: 250px;\n  padding: 10px 0px 25px 0px; }\n\n.foote_bottom_ul_amrc {\n  list-style-type: none;\n  padding: 0px;\n  display: table;\n  margin-top: 10px;\n  margin-right: auto;\n  margin-bottom: 10px;\n  margin-left: auto; }\n\n.foote_bottom_ul_amrc .link {\n  display: inline; }\n\n.foote_bottom_ul_amrc .link a {\n  color: #ffffff;\n  margin: 0 12px; }\n\n.team {\n  background-color: #f8f9fa;\n  padding: 60px 60px;\n  align-content: center;\n  font-family: 'Raleway', sans-serif; }\n\n.team h4 {\n  margin-top: 20px;\n  color: #5db4c0; }\n\n.team h1 {\n  color: #4C4C4C;\n  word-spacing: 5px;\n  font-size: 30px;\n  font-weight: 700;\n  margin-bottom: 30px;\n  font-family: 'Raleway', sans-serif; }\n\n.books input {\n  padding: 15px 15px !important; }\n\nhr.star-dark,\nhr.star-light {\n  max-width: 15rem;\n  padding: 0;\n  text-align: center;\n  border: none;\n  border-top: solid .25rem;\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  margin-left: auto;\n  margin-right: auto; }\n\nhr.star-dark:after,\nhr.star-light:after {\n  position: relative;\n  top: -.8em;\n  display: inline-block;\n  padding: 0 .25em;\n  font-family: \"Font Awesome 5 Free\";\n  font-weight: 900;\n  font-size: 2em; }\n\nhr.star-light {\n  border-color: #fff; }\n\nhr.star-light:after {\n  color: #fff;\n  background-color: #18bc9c; }\n\nhr.star-dark {\n  border-color: #2c3e50; }\n\nhr.star-dark:after {\n  color: #2c3e50;\n  background-color: #fff; }\n\nsection {\n  padding: 6rem 0; }\n\nsection h2 {\n  font-size: 2.25rem;\n  line-height: 2rem; }\n\n@media (min-width: 992px) {\n  section h2 {\n    font-size: 3rem;\n    line-height: 2.5rem; } }\n\n.btn-xl {\n  padding: 1rem 1.75rem;\n  font-size: 1.25rem; }\n\n.btn-social {\n  width: 3.25rem;\n  height: 3.25rem;\n  font-size: 1.25rem;\n  line-height: 2rem; }\n\n.scroll-to-top {\n  z-index: 1042;\n  right: 1rem;\n  bottom: 1rem;\n  display: none; }\n\n.scroll-to-top a {\n  width: 3.5rem;\n  height: 3.5rem;\n  background-color: rgba(33, 37, 41, 0.5);\n  line-height: 3.1rem; }\n\n#mainNav {\n  padding-top: 1rem;\n  padding-bottom: 1rem;\n  font-weight: 700;\n  font-family: Montserrat; }\n\n#mainNav .navbar-brand {\n  color: #fff; }\n\n#mainNav .navbar-nav {\n  margin-top: 1rem;\n  letter-spacing: .0625rem; }\n\n#mainNav .navbar-nav li.nav-item a.nav-link {\n  color: #fff; }\n\n#mainNav .navbar-nav li.nav-item a.nav-link:hover {\n  color: #18bc9c; }\n\n#mainNav .navbar-nav li.nav-item a.nav-link:active,\n#mainNav .navbar-nav li.nav-item a.nav-link:focus {\n  color: #fff; }\n\n#mainNav .navbar-nav li.nav-item a.nav-link.active {\n  color: #18bc9c; }\n\n#mainNav .navbar-toggler {\n  font-size: 80%;\n  padding: .8rem; }\n\n@media (min-width: 992px) {\n  #mainNav {\n    padding-top: 1.5rem;\n    padding-bottom: 1.5rem;\n    -webkit-transition: padding-top .3s, padding-bottom .3s;\n    transition: padding-top .3s, padding-bottom .3s; }\n  #mainNav .navbar-brand {\n    font-size: 2em;\n    -webkit-transition: font-size .3s;\n    transition: font-size .3s; }\n  #mainNav .navbar-nav {\n    margin-top: 0; }\n  #mainNav .navbar-nav > li.nav-item > a.nav-link.active {\n    color: #fff;\n    background: #18bc9c; }\n  #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active,\n  #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus,\n  #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {\n    color: #fff;\n    background: #18bc9c; }\n  #mainNav.navbar-shrink {\n    padding-top: .5rem;\n    padding-bottom: .5rem; }\n  #mainNav.navbar-shrink .navbar-brand {\n    font-size: 1.5em; } }\n\nheader.masthead {\n  padding-top: calc(2rem + 23px);\n  padding-bottom: 4rem; }\n\nheader.masthead h1 {\n  font-size: 3rem;\n  line-height: 3rem; }\n\nheader.masthead h2 {\n  font-size: 1.3rem;\n  font-family: Lato; }\n\n@media (min-width: 240px) {\n  header.masthead {\n    padding-top: calc(2rem + 23px);\n    padding-bottom: 4rem; }\n  header.masthead h1 {\n    font-size: 4.75em;\n    line-height: 4rem; }\n  header.masthead h2 {\n    font-size: 1.75em; } }\n\n.portfolio {\n  margin-bottom: -15px; }\n\n.portfolio .portfolio-item {\n  position: relative;\n  display: block;\n  max-width: 25rem;\n  margin-bottom: 15px; }\n\n.portfolio .portfolio-item .portfolio-item-caption {\n  -webkit-transition: all ease .5s;\n  transition: all ease .5s;\n  opacity: 0;\n  background-color: rgba(24, 188, 156, 0.9); }\n\n.portfolio .portfolio-item .portfolio-item-caption:hover {\n  opacity: 1; }\n\n.portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {\n  font-size: 1.5rem; }\n\n@media (min-width: 576px) {\n  .portfolio {\n    margin-bottom: -30px; }\n  .portfolio .portfolio-item {\n    margin-bottom: 30px; } }\n\n.floating-label-form-group {\n  position: relative;\n  border-bottom: 1px solid #e9ecef; }\n\n.floating-label-form-group input,\n.floating-label-form-group textarea {\n  font-size: 1.5em;\n  position: relative;\n  z-index: 1;\n  padding-right: 0;\n  padding-left: 0;\n  resize: none;\n  border: none;\n  border-radius: 0;\n  background: 0 0;\n  -webkit-box-shadow: none !important;\n  box-shadow: none !important; }\n\n.floating-label-form-group label {\n  font-size: .85em;\n  line-height: 1.764705882em;\n  position: relative;\n  z-index: 0;\n  top: 2em;\n  display: block;\n  margin: 0;\n  -webkit-transition: top .3s ease, opacity .3s ease;\n  transition: top .3s ease, opacity .3s ease;\n  opacity: 0; }\n\n.floating-label-form-group:not(:first-child) {\n  padding-left: 14px;\n  border-left: 1px solid #e9ecef; }\n\n.floating-label-form-group-with-value label {\n  top: 0;\n  opacity: 1; }\n\n.floating-label-form-group-with-focus label {\n  color: #18bc9c; }\n\nform .row:first-child .floating-label-form-group {\n  border-top: 1px solid #e9ecef; }\n\n.footer {\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n  background-color: #2c3e50;\n  color: #fff; }\n\n.copyright {\n  background-color: #1a252f; }\n\na {\n  color: #18bc9c; }\n\na:active,\na:focus,\na:hover {\n  color: #128f76; }\n\n.btn {\n  border-width: 2px; }\n\n.bg-primary {\n  background-color: #18bc9c !important; }\n\n.bg-secondary {\n  background-color: #2c3e50 !important; }\n\n.text-primary {\n  color: #18bc9c !important; }\n\n.text-secondary {\n  color: #2c3e50 !important; }\n\n.btn-primary {\n  background-color: #18bc9c;\n  border-color: #18bc9c; }\n\n.btn-primary:active,\n.btn-primary:focus,\n.btn-primary:hover {\n  background-color: #128f76;\n  border-color: #128f76; }\n\n.btn-secondary {\n  background-color: #2c3e50;\n  border-color: #2c3e50; }\n\n.btn-secondary:active,\n.btn-secondary:focus,\n.btn-secondary:hover {\n  background-color: #1a252f;\n  border-color: #1a252f; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: Lato; }\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-weight: 700;\n  font-family: Montserrat; }\n\nfooter {\n  width: 100%;\n  background-color: #18bc9c;\n  min-height: 250px;\n  padding: 10px 0px 25px 0px; }\n\n.foote_bottom_ul_amrc {\n  list-style-type: none;\n  padding: 0px;\n  display: table;\n  margin-top: 10px;\n  margin-right: auto;\n  margin-bottom: 10px;\n  margin-left: auto; }\n\n.foote_bottom_ul_amrc .link {\n  display: inline; }\n\n.foote_bottom_ul_amrc .link a {\n  color: #ffffff;\n  margin: 0 12px; }\n\n.team {\n  background-color: #f8f9fa;\n  padding: 60px 60px;\n  align-content: center;\n  font-family: 'Raleway', sans-serif; }\n\n.team h4 {\n  margin-top: 20px;\n  color: #5db4c0; }\n\n.team h1 {\n  color: #4C4C4C;\n  word-spacing: 5px;\n  font-size: 30px;\n  font-weight: 700;\n  margin-bottom: 30px;\n  font-family: 'Raleway', sans-serif; }\n\n.team h5 {\n  color: #000000;\n  font-size: 12px;\n  margin-bottom: 10px;\n  font-family: 'Raleway', sans-serif; }\n\n.team p {\n  color: #18bc9c;\n  font-size: 20px;\n  margin-bottom: 10px;\n  font-family: 'Raleway', sans-serif; }\n\n.books input {\n  padding: 15px 15px !important; }\n\nhr.star-dark,\nhr.star-light {\n  max-width: 15rem;\n  padding: 0;\n  text-align: center;\n  border: none;\n  border-top: solid .25rem;\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  margin-left: auto;\n  margin-right: auto; }\n\nhr.star-dark:after,\nhr.star-light:after {\n  position: relative;\n  top: -.8em;\n  display: inline-block;\n  padding: 0 .25em;\n  font-family: \"Font Awesome 5 Free\";\n  font-weight: 900;\n  font-size: 2em; }\n\nhr.star-light {\n  border-color: #fff; }\n\nhr.star-light:after {\n  color: #fff;\n  background-color: #18bc9c; }\n\nhr.star-dark {\n  border-color: #2c3e50; }\n\nhr.star-dark:after {\n  color: #2c3e50;\n  background-color: #fff; }\n\nsection {\n  padding: 6rem 0; }\n\nsection h2 {\n  font-size: 2.25rem;\n  line-height: 2rem; }\n\n@media (min-width: 992px) {\n  section h2 {\n    font-size: 3rem;\n    line-height: 2.5rem; } }\n\n.btn-xl {\n  padding: 1rem 1.75rem;\n  font-size: 1.25rem; }\n\n.btn-social {\n  width: 3.25rem;\n  height: 3.25rem;\n  font-size: 1.25rem;\n  line-height: 2rem; }\n\nheader.masthead {\n  padding-top: calc(2rem + 23px);\n  padding-bottom: 4rem; }\n\nheader.masthead h1 {\n  font-size: 3rem;\n  line-height: 3rem; }\n\nheader.masthead h2 {\n  font-size: 1.3rem;\n  font-family: Lato; }\n\n@media (min-width: 240px) {\n  header.masthead {\n    padding-top: calc(2rem + 23px);\n    padding-bottom: 4rem; }\n  header.masthead h1 {\n    font-size: 4.75em;\n    line-height: 4rem; }\n  header.masthead h2 {\n    font-size: 1.75em; } }\n\n.portfolio {\n  margin-bottom: -15px; }\n\n.portfolio .portfolio-item {\n  position: relative;\n  display: block;\n  max-width: 25rem;\n  margin-bottom: 15px; }\n\n.portfolio .portfolio-item .portfolio-item-caption {\n  -webkit-transition: all ease .5s;\n  transition: all ease .5s;\n  opacity: 0;\n  background-color: rgba(24, 188, 156, 0.9); }\n\n.portfolio .portfolio-item .portfolio-item-caption:hover {\n  opacity: 1; }\n\n.portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {\n  font-size: 1.5rem; }\n\n@media (min-width: 576px) {\n  .portfolio {\n    margin-bottom: -30px; }\n  .portfolio .portfolio-item {\n    margin-bottom: 30px; } }\n\n.floating-label-form-group {\n  position: relative;\n  border-bottom: 1px solid #e9ecef; }\n\n.floating-label-form-group input,\n.floating-label-form-group textarea {\n  font-size: 1.5em;\n  position: relative;\n  z-index: 1;\n  padding-right: 0;\n  padding-left: 0;\n  resize: none;\n  border: none;\n  border-radius: 0;\n  background: 0 0;\n  -webkit-box-shadow: none !important;\n  box-shadow: none !important; }\n\n.floating-label-form-group label {\n  font-size: .85em;\n  line-height: 1.764705882em;\n  position: relative;\n  z-index: 0;\n  top: 2em;\n  display: block;\n  margin: 0;\n  -webkit-transition: top .3s ease, opacity .3s ease;\n  transition: top .3s ease, opacity .3s ease;\n  opacity: 0; }\n\n.floating-label-form-group:not(:first-child) {\n  padding-left: 14px;\n  border-left: 1px solid #e9ecef; }\n\n.floating-label-form-group-with-value label {\n  top: 0;\n  opacity: 1; }\n\n.floating-label-form-group-with-focus label {\n  color: #18bc9c; }\n\nform .row:first-child .floating-label-form-group {\n  border-top: 1px solid #e9ecef; }\n\n.footer {\n  padding-top: 5rem;\n  padding-bottom: 5rem;\n  background-color: #2c3e50;\n  color: #fff; }\n\n.copyright {\n  background-color: #1a252f; }\n\na {\n  color: #18bc9c; }\n\na:active,\na:focus,\na:hover {\n  color: #128f76; }\n\n.btn {\n  border-width: 2px; }\n\n.bg-primary {\n  background-color: #18bc9c !important; }\n\n.bg-secondary {\n  background-color: #2c3e50 !important; }\n\n.text-primary {\n  color: #18bc9c !important; }\n\n.text-secondary {\n  color: #2c3e50 !important; }\n\n.btn-primary {\n  background-color: #18bc9c;\n  border-color: #18bc9c; }\n\n.btn-primary:active,\n.btn-primary:focus,\n.btn-primary:hover {\n  background-color: #128f76;\n  border-color: #128f76; }\n\n.btn-secondary {\n  background-color: #2c3e50;\n  border-color: #2c3e50; }\n\n.btn-secondary:active,\n.btn-secondary:focus,\n.btn-secondary:hover {\n  background-color: #1a252f;\n  border-color: #1a252f; }\n", ""]);
 
 // exports
 
@@ -71404,7 +71445,6 @@ module.exports = function (css) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(15);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -71412,7 +71452,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -71488,7 +71527,7 @@ var Authors = function (_Component) {
         key: 'render',
         value: function render() {
             console.log(this.props.match.params.id);
-            console.log(this.state.nome);
+            console.log(this.state.name);
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'container' },
@@ -71527,7 +71566,7 @@ var Authors = function (_Component) {
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
                                             onChange: this.handleChange,
-                                            value: this.state.nome,
+                                            value: this.state.name,
                                             type: 'text',
                                             name: 'nome',
                                             className: 'form-control',
@@ -71553,6 +71592,464 @@ var Authors = function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (Authors);
+
+/***/ }),
+/* 118 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var PublisherEdit = function (_Component) {
+    _inherits(PublisherEdit, _Component);
+
+    function PublisherEdit(props) {
+        _classCallCheck(this, PublisherEdit);
+
+        var _this = _possibleConstructorReturn(this, (PublisherEdit.__proto__ || Object.getPrototypeOf(PublisherEdit)).call(this, props));
+
+        _this.state = {
+            name: '',
+            publishers: []
+        };
+        // bind
+        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleSubmit = _this.handleSubmit.bind(_this);
+        return _this;
+    }
+
+    // handle change
+
+
+    _createClass(PublisherEdit, [{
+        key: 'handleChange',
+        value: function handleChange(e) {
+            this.setState({
+                name: e.target.value
+            });
+        }
+    }, {
+        key: 'handleSubmit',
+        value: function handleSubmit(e) {
+            var _this2 = this;
+
+            e.preventDefault();
+            axios.put('/publishers/' + this.props.match.params.id, {
+                name: this.state.name
+            }).then(function (response) {
+                console.log('successfully edited the publisher', response.data.publisher);
+                // set state
+                _this2.props.history.push('/publisher');
+            }).catch(function (error) {
+                console.log('Errors:', error.response.data);
+            });
+        }
+
+        // get all publishers from backend
+
+    }, {
+        key: 'getPublishers',
+        value: function getPublishers() {
+            var _this3 = this;
+
+            axios.get('/publishers/' + this.props.match.params.id + '/edit').then(function (response) {
+                return _this3.setState({
+                    publishers: response.data.publisher,
+                    name: response.data.publisher.name
+                });
+            }).catch(function (error) {
+                console.log('Errors:', error.response);
+            });
+        }
+        // lifecycle method
+
+    }, {
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            this.getPublishers();
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            console.log(this.props.match.params.id);
+            console.log(this.state.nome);
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'container' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'row' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'col-md-12' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'card' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'card-header text-center' },
+                                'Alterar Editora'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'card-body' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'form',
+                                    { onSubmit: this.handleSubmit },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'form-group' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'label',
+                                            { className: 'text-left' },
+                                            'Nome',
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'span',
+                                                { className: 'text-danger' },
+                                                '*'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                                            onChange: this.handleChange,
+                                            value: this.state.name,
+                                            type: 'text',
+                                            name: 'nome',
+                                            className: 'form-control',
+                                            rows: '1',
+                                            required: true
+                                        })
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'button',
+                                        { type: 'submit', className: 'btn btn-primary' },
+                                        'Atualizar Editora'
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return PublisherEdit;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (PublisherEdit);
+
+/***/ }),
+/* 119 */,
+/* 120 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var Books = function (_Component) {
+    _inherits(Books, _Component);
+
+    function Books(props) {
+        _classCallCheck(this, Books);
+
+        var _this = _possibleConstructorReturn(this, (Books.__proto__ || Object.getPrototypeOf(Books)).call(this, props));
+
+        _this.state = {
+            title: '',
+            sellingPrice: '',
+            loanPrice: '',
+            ISBN: '',
+            stock: '',
+            publisher_id: '',
+            author_id: '',
+            books: []
+        };
+        // bind
+        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleSubmit = _this.handleSubmit.bind(_this);
+        return _this;
+    }
+
+    // handle change
+
+
+    _createClass(Books, [{
+        key: 'handleChange',
+        value: function handleChange(e) {
+            this.setState(_defineProperty({}, e.target.name, e.target.value));
+        }
+    }, {
+        key: 'handleSubmit',
+        value: function handleSubmit(e) {
+            var _this2 = this;
+
+            e.preventDefault();
+            axios.put('/books/' + this.props.match.params.id, {
+                title: this.state.title,
+                sellingPrice: this.state.sellingPrice,
+                loanPrice: this.state.loanPrice,
+                ISBN: this.state.ISBN,
+                stock: this.state.stock,
+                publisher_id: this.state.publisher_id,
+                author_id: this.state.author_id
+            }).then(function (response) {
+                console.log('successfully edited the publisher', response.data.book);
+                // set state
+                _this2.props.history.push('/book');
+            }).catch(function (error) {
+                console.log('Errors:', error.response.data);
+            });
+        }
+
+        // get all books from backend
+
+    }, {
+        key: 'getBooks',
+        value: function getBooks() {
+            var _this3 = this;
+
+            axios.get('/books/' + this.props.match.params.id + '/edit').then(function (response) {
+                return _this3.setState({
+                    books: response.data.book,
+                    title: response.data.book.title,
+                    sellingPrice: response.data.book.sellingPrice,
+                    loanPrice: response.data.book.loanPrice,
+                    ISBN: response.data.book.ISBN,
+                    stock: response.data.book.stock,
+                    publisher_id: response.data.book.publisher_id,
+                    author_id: response.data.book.author_id
+                });
+            }).catch(function (error) {
+                console.log('Errors:', error.response.data);
+            });
+        }
+        // lifecycle method
+
+    }, {
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            this.getBooks();
+        }
+    }, {
+        key: 'handleUpdate',
+        value: function handleUpdate(id) {
+            var _this4 = this;
+
+            axios.put('/books/' + id).then(function (response) {
+                _this4.getBooks();
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            console.log(this.props.match.params.id);
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'container' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'row' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'col-md-12' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'card' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'card-header text-center' },
+                                'Livros'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'card-body' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'form',
+                                    { onSubmit: this.handleSubmit },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'form-group' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'label',
+                                            { className: 'text-left' },
+                                            'T\xEDtulo',
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'span',
+                                                { className: 'text-danger' },
+                                                '*'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                                            onChange: this.handleChange,
+                                            value: this.state.title,
+                                            type: 'text',
+                                            name: 'title',
+                                            className: 'form-control',
+                                            rows: '1',
+                                            placeholder: 'nome do livro',
+                                            required: true
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'label',
+                                            { className: 'text-left' },
+                                            'Pre\xE7o de Venda',
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'span',
+                                                { className: 'text-danger' },
+                                                '*'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                                            onChange: this.handleChange,
+                                            value: this.state.sellingPrice,
+                                            className: 'form-control',
+                                            type: 'number',
+                                            name: 'sellingPrice',
+                                            rows: '1',
+                                            placeholder: 'Apenas n\xFAmeros',
+                                            required: true
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'label',
+                                            { className: 'text-left' },
+                                            'Pre\xE7o de Empr\xE9stimo',
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'span',
+                                                { className: 'text-danger' },
+                                                '*'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                                            onChange: this.handleChange,
+                                            value: this.state.loanPrice,
+                                            className: 'form-control',
+                                            type: 'number',
+                                            name: 'loanPrice',
+                                            rows: '1',
+                                            placeholder: 'Apenas n\xFAmeros',
+                                            required: true
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'label',
+                                            { className: 'text-left' },
+                                            'ISBN',
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'span',
+                                                { className: 'text-danger' },
+                                                '*'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                                            onChange: this.handleChange,
+                                            value: this.state.ISBN,
+                                            className: 'form-control',
+                                            type: 'number',
+                                            name: 'ISBN',
+                                            rows: '1',
+                                            placeholder: 'ISBN',
+                                            required: true
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'label',
+                                            { className: 'text-left' },
+                                            'Quantidade em Estoque',
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'span',
+                                                { className: 'text-danger' },
+                                                '*'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                                            onChange: this.handleChange,
+                                            value: this.state.stock,
+                                            className: 'form-control',
+                                            type: 'number',
+                                            name: 'stock',
+                                            rows: '1',
+                                            placeholder: 'Quantidade',
+                                            required: true
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'label',
+                                            { className: 'text-left' },
+                                            'Editora',
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'span',
+                                                { className: 'text-danger' },
+                                                '*'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                                            onChange: this.handleChange,
+                                            value: this.state.publisher_id,
+                                            className: 'form-control',
+                                            type: 'number',
+                                            name: 'publisher_id',
+                                            rows: '1',
+                                            placeholder: 'ID Editora',
+                                            required: true
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'label',
+                                            { className: 'text-left' },
+                                            'Autor',
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'span',
+                                                { className: 'text-danger' },
+                                                '*'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                                            onChange: this.handleChange,
+                                            value: this.state.author_id,
+                                            className: 'form-control',
+                                            type: 'number',
+                                            name: 'author_id',
+                                            rows: '1',
+                                            placeholder: 'ID Autor',
+                                            required: true
+                                        })
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'button',
+                                        { type: 'submit', className: 'btn btn-primary' },
+                                        'Atualizar Livro'
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Books;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Books);
 
 /***/ })
 /******/ ]);

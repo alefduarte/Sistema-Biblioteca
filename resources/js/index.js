@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import App from './App/App'
-import {AuthorEdit, Authors} from './components/';
+import { AuthorEdit, PublisherEdit, BookEdit } from './components/';
 require('../sass/style.scss')
 import { dom } from '@fortawesome/fontawesome-svg-core'
 
@@ -13,8 +13,9 @@ if (document.getElementById('root')) {
       <BrowserRouter>
           <div>
               <Switch>
-                  <Route path="/:id/edit" component={AuthorEdit} exact={true} />
-                  <Route path="/author" component={Authors} exact={true} />
+                  <Route path="/author/:id/edit" component={AuthorEdit} exact={true} />
+                  <Route path="/publisher/:id/edit" component={PublisherEdit} exact={true} />
+                  <Route path="/book/:id/edit" component={BookEdit} exact={true} />
                   <App />
               </Switch>
           </div>

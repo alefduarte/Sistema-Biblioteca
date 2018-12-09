@@ -53,7 +53,7 @@ class BookController extends Controller
             'loanPrice' => 'required|numeric',
             'ISBN' => 'required|numeric',
             'stock' => 'required|numeric',
-            'publisher_id' => 'required|numeric',
+            'book_id' => 'required|numeric',
             'author_id' => 'required|numeric'
         ]);
         if ($validator->fails()) {
@@ -66,7 +66,7 @@ class BookController extends Controller
             'loanPrice' => request('loanPrice'),
             'ISBN' => request('ISBN'),
             'stock' => request('stock'),
-            'publisher_id' => request('publisher_id'),
+            'book_id' => request('book_id'),
             'author_id' => request('author_id')
         ]);
 
@@ -96,7 +96,10 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = Book::findOrFail($id);
+        return response()->json([
+            'book' => $book,
+        ]);
     }
 
     /**
@@ -108,7 +111,14 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // update book
+        $input = $request->all();
+        $book = Book::findOrFail($id);
+        $book->update($input);
+        return response()->json([
+            'book' => $book,
+            'message' => 'Success'
+        ], 200);
     }
 
     /**

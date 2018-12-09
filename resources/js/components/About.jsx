@@ -25,7 +25,7 @@ const Home = () => (
             <div className="container">
                 <div className="row">
                     <div className="col text-center">
-                        <h1>NOSSO TIME</h1>
+                        <h1>NOSSA EQUIPE</h1>
                         <hr className="star-dark mb-5"></hr>
                     </div>
                 </div>
@@ -36,8 +36,8 @@ const Home = () => (
                             alt="Álef Duarte" />
                         <div className="team-member">
                             <h4>Álef Duarte</h4>
-                            <p><strong>Graduando em Engenharia da Computação</strong></p>
-                            <p>Desenvolvimento de ...</p>
+                            <h5><strong>Graduando em Engenharia da Computação</strong></h5>
+                            <p>Programação Front-end e Back-end</p>
                         </div>
                         <ul className={"list-unstyled list-inline text-center"}>
                             <li className={"list-inline-item"}>
@@ -71,8 +71,8 @@ const Home = () => (
                             alt="Marina Batista" />
                         <div className="team-member">
                             <h4>Marina Batista</h4>
-                            <p><strong>Graduanda em Engenharia da Computação</strong></p>
-                            <p>Desenvolvimento de ...</p>
+                            <h5><strong>Graduanda em Engenharia da Computação</strong></h5>
+                            <p>Modelagem e Implementação do Banco de Dados<br></br>Programação Front-end</p>
                         </div>
                         <ul className={"list-unstyled list-inline text-center"}>
                             <li className={"list-inline-item"}>

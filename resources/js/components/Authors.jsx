@@ -65,7 +65,7 @@ export default class Authors extends Component {
                 <td>{author.id}</td>
                 <td>{author.name}</td>
                 <td>
-                    <Link className="btn btn-sm btn-success" to={`author/${author.id}/edit`}>
+                    <Link className="btn btn-sm btn-success float-right" to={`author/${author.id}/edit`}>
                         Edit</Link>
                     <button
                         onClick={() => this.handleDelete(author.id)}
@@ -133,6 +133,7 @@ export default class Authors extends Component {
                                             <tr>
                                                 <th>#</th>
                                                 <th>Nome</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>

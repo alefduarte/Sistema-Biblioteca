@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Footer from './Footer';
 
 export default class PublisherEdit extends Component {
     constructor(props) {
@@ -68,7 +67,7 @@ export default class PublisherEdit extends Component {
                                         <label className="text-left">Nome<span className="text-danger">*</span></label>
                                         <input
                                             onChange={this.handleChange}
-                                            value={this.state.nome}
+                                            value={this.state.name}
                                             type="text"
                                             name="nome"
                                             className="form-control"

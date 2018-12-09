@@ -63,7 +63,7 @@ export default class Publishers extends Component {
                 <td>{publisher.id}</td>
                 <td>{publisher.name}</td>
                 <td>
-                    <Link className="btn btn-sm btn-success" to={`/publisher/${publisher.id}/edit`}>
+                    <Link className="btn btn-sm btn-success float-right" to={`/publisher/${publisher.id}/edit`}>
                         Edit</Link>
                     <button
                         onClick={() => this.handleDelete(publisher.id)}
@@ -104,7 +104,7 @@ export default class Publishers extends Component {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="card">
-                            <div className="card-header text-center">Editar Editora</div>
+                            <div className="card-header text-center">Editoras</div>
                             <div className="card-body">
                                 <form onSubmit={this.handleSubmit}>
                                     <div className="form-group">
@@ -120,7 +120,7 @@ export default class Publishers extends Component {
                                         />
                                     </div>
                                     <button type="submit" className="btn btn-primary">
-                                        Alterar Editora
+                                        Adicionar Editora
                                 </button>
                                 </form>
                                 <hr />
