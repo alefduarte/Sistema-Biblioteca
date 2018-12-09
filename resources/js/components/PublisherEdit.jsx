@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import Footer from './Footer';
 
-export default class Authors extends Component {
+export default class PublisherEdit extends Component {
     constructor(props) {
         super(props);
         this.state = {
             name: '',
-            authors: []
+            publishers: []
         };
         // bind
         this.handleChange = this.handleChange.bind(this);
@@ -22,26 +23,26 @@ export default class Authors extends Component {
     handleSubmit(e) {
         e.preventDefault();
         axios
-            .put(`/authors/${this.props.match.params.id}`, {
+            .put(`/publishers/${this.props.match.params.id}`, {
                 name: this.state.name
             })
             .then((response) => {
-                console.log('successfully edited the author', response.data.author);
+                console.log('successfully edited the publisher', response.data.publisher);
                 // set state
-                this.props.history.push('/author');
+                this.props.history.push('/publisher');
             }).catch((error) => {
                 console.log('Errors:', error.response.data)
             });
     }
 
-    // get all authors from backend
-    getAuthors() {
-        axios.get(`/authors/${this.props.match.params.id}/edit`).then((
+    // get all publishers from backend
+    getPublishers() {
+        axios.get(`/publishers/${this.props.match.params.id}/edit`).then((
             response
         ) =>
             this.setState({
-                authors: response.data.author,
-                name: response.data.author.name
+                publishers: response.data.publisher,
+                name: response.data.publisher.name
             })
         ).catch((error) => {
             console.log('Errors:', error.response)
@@ -49,25 +50,25 @@ export default class Authors extends Component {
     }
     // lifecycle method
     componentWillMount() {
-        this.getAuthors();
+        this.getPublishers();
     }
 
     render() {
         console.log(this.props.match.params.id);
-        console.log(this.state.name);
+        console.log(this.state.nome);
         return (
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
                         <div className="card">
-                            <div className="card-header text-center">Editar Autor</div>
+                            <div className="card-header text-center">Alterar Editora</div>
                             <div className="card-body">
                                 <form onSubmit={this.handleSubmit}>
                                     <div className="form-group">
                                         <label className="text-left">Nome<span className="text-danger">*</span></label>
                                         <input
                                             onChange={this.handleChange}
-                                            value={this.state.name}
+                                            value={this.state.nome}
                                             type="text"
                                             name="nome"
                                             className="form-control"
@@ -76,7 +77,7 @@ export default class Authors extends Component {
                                         />
                                     </div>
                                     <button type="submit" className="btn btn-primary">
-                                        Atualizar Autor
+                                        Atualizar Editora
                                     </button>
                                 </form>
                             </div>
@@ -84,6 +85,7 @@ export default class Authors extends Component {
                     </div>
                 </div>
             </div>
+            
         );
     }
 }

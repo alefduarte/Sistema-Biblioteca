@@ -6,3 +6,4 @@ export { default as Authors } from "./Authors";
 export { default as Publishers } from "./Publishers";
 export { default as About } from "./About";
 export { default as AuthorEdit } from "./AuthorEdit";
+export { default as PublisherEdit } from "./PublisherEdit";

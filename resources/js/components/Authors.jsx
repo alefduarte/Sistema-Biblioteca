@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
+import ReactDOM from 'react-dom';
 
 export default class Authors extends Component {
     constructor(props) {
@@ -65,16 +65,14 @@ export default class Authors extends Component {
                 <td>{author.id}</td>
                 <td>{author.name}</td>
                 <td>
+                    <Link className="btn btn-sm btn-success" to={`author/${author.id}/edit`}>
+                        Edit</Link>
                     <button
                         onClick={() => this.handleDelete(author.id)}
                         className="btn btn-sm btn-warning float-right"
                     >
                         Delete
                     </button></td>
-                <td>
-                    <Link className="btn btn-sm btn-success" to={`/${author.id}/edit`}>
-                        Edit</Link>
-                </td>
             </tr >
         ));
     }
@@ -115,7 +113,7 @@ export default class Authors extends Component {
                                         <label className="text-left">Nome<span className="text-danger">*</span></label>
                                         <input
                                             onChange={this.handleChange}
-                                            value={this.state.nome}
+                                            value={this.state.name}
                                             type="text"
                                             name="nome"
                                             className="form-control"

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 
 export default class Publishers extends Component {
     constructor(props) {
@@ -13,6 +13,7 @@ export default class Publishers extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderPublishers = this.renderPublishers.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
     }
 
     // handle change
@@ -62,6 +63,8 @@ export default class Publishers extends Component {
                 <td>{publisher.id}</td>
                 <td>{publisher.name}</td>
                 <td>
+                    <Link className="btn btn-sm btn-success" to={`/publisher/${publisher.id}/edit`}>
+                        Edit</Link>
                     <button
                         onClick={() => this.handleDelete(publisher.id)}
                         className="btn btn-sm btn-warning float-right"
@@ -89,30 +92,35 @@ export default class Publishers extends Component {
         this.getPublishers();
     }
 
+    handleUpdate(id) {
+        axios.put(`/publishers/${id}`).then(response => {
+            this.getPublishers();
+        });
+    }
+
     render() {
         return (
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
                         <div className="card">
-                            <div className="card-header text-center">Editoras</div>
+                            <div className="card-header text-center">Editar Editora</div>
                             <div className="card-body">
                                 <form onSubmit={this.handleSubmit}>
                                     <div className="form-group">
                                         <label className="text-left">Nome<span className="text-danger">*</span></label>
                                         <input
                                             onChange={this.handleChange}
-                                            value={this.state.nome}
+                                            value={this.state.name}
                                             type="text"
                                             name="nome"
                                             className="form-control"
                                             rows="1"
-                                            placeholder="nome da editora"
                                             required
                                         />
                                     </div>
                                     <button type="submit" className="btn btn-primary">
-                                        Adicionar Editora
+                                        Alterar Editora
                                 </button>
                                 </form>
                                 <hr />

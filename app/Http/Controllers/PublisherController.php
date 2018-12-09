@@ -84,7 +84,10 @@ class PublisherController extends Controller
      */
     public function edit($id)
     {
-        //
+        $publisher = Publisher::findOrFail($id);
+        return response()->json([
+            'publisher' => $publisher,
+        ]);
     }
 
     /**
@@ -96,7 +99,14 @@ class PublisherController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // update publisher
+        $input = $request->all();
+        $publisher = Publisher::findOrFail($id);
+        $publisher->update($input);
+        return response()->json([
+            'publisher' => $publisher,
+            'message' => 'Success'
+        ], 200);
     }
 
     /**
