@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 
 export default class Authors extends Component {
     constructor(props) {
@@ -13,6 +14,7 @@ export default class Authors extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderAuthors = this.renderAuthors.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
     }
 
     // handle change
@@ -69,6 +71,10 @@ export default class Authors extends Component {
                     >
                         Delete
                     </button></td>
+                <td>
+                    <Link className="btn btn-sm btn-success" to={`/${author.id}/edit`}>
+                        Edit</Link>
+                </td>
             </tr >
         ));
     }
@@ -88,6 +94,12 @@ export default class Authors extends Component {
     // lifecycle method
     componentWillMount() {
         this.getAuthors();
+    }
+
+    handleUpdate(id) {
+        axios.put(`/authors/${id}`).then(response => {
+            this.getAuthors();
+        });
     }
 
     render() {
@@ -127,6 +139,7 @@ export default class Authors extends Component {
                                         </thead>
                                         <tbody>
                                             {this.renderAuthors()}
+                                            {this.props.match.params.id}
                                         </tbody>
                                     </table>
                                 </div>

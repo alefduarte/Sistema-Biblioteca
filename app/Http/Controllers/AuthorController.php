@@ -83,7 +83,10 @@ class AuthorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $author = Author::findOrFail($id);
+        return response()->json([
+            'author' => $author,
+        ]);
     }
 
     /**
@@ -95,7 +98,14 @@ class AuthorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // update author
+        $input = $request->all();
+        $author = Author::findOrFail($id);
+        $author->update($input);
+        return response()->json([
+            'author' => $author,
+            'message' => 'Success'
+        ], 200);
     }
 
     /**
