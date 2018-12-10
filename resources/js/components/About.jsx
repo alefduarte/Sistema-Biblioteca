@@ -7,14 +7,16 @@ import {
     fab,
     faTwitter,
     faFacebook,
-    faInstagram
+    faInstagram,
+    faGit
 } from '@fortawesome/free-brands-svg-icons'
 
 library.add(
     fab,
     faTwitter,
     faInstagram,
-    faFacebook
+    faFacebook,
+    faGit
 )
 
 
@@ -64,6 +66,14 @@ const Home = () => (
                                         title="Instagram"
                                         color="#5db4c0" /></a>
                             </li>
+                            <li className={"list-inline-item"}>
+                                <a className="btn-floating btn-fb mx-1">
+                                    <FontAwesomeIcon
+                                        icon={faGit}
+                                        size="1x"
+                                        title="GitHub"
+                                        color="#5db4c0" /></a>
+                            </li>
                         </ul>
                     </div>
                     <div className="col">
@@ -97,6 +107,14 @@ const Home = () => (
                                         icon={faInstagram}
                                         size="1x"
                                         title="Instagram"
+                                        color="#5db4c0" /></a>
+                            </li>
+                            <li className={"list-inline-item"}>
+                                <a className="btn-floating btn-fb mx-1">
+                                    <FontAwesomeIcon
+                                        icon={faGit}
+                                        size="1x"
+                                        title="GitHub"
                                         color="#5db4c0" /></a>
                             </li>
                         </ul>

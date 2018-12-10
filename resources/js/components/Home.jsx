@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../img/logo.png'
+import logo2 from '../img/logo2.png'
 import author from '../img/author.png'
 import book from '../img/book.png'
 import publisher from '../img/publisher.png'
@@ -25,7 +26,7 @@ const Home = () => (
         {/* HEADER */}
         <header className="masthead bg-primary text-white text-center">
             <div className={'container'}>
-                <img className="img-fluid col-md-6 col-lg-4 d-block mx-auto" src={logo} alt="Heidegger Books"></img>
+                <img className="img-fluid col-md-6 col-lg-4 d-block mx-auto" src={logo2} alt="Heidegger Books"></img>
                 <h1 className="text-uppercase mb-0">Heidegger Books</h1>
                 <hr className="star-light"></hr>
                 <h2 className="font-weight-light mb-0">Sua fonte de conhecimento</h2>
