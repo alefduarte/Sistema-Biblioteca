@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from '../img/logo.png'
 import logo2 from '../img/logo2.png'
 import author from '../img/author.png'
 import book from '../img/book.png'

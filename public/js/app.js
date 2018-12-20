@@ -71844,7 +71844,7 @@ var Books = function (_Component) {
                 publisher_id: this.state.publisher_id,
                 author_id: this.state.author_id
             }).then(function (response) {
-                console.log('successfully edited the publisher', response.data.book);
+                console.log('successfully edited the book', response.data.book);
                 // set state
                 _this2.props.history.push('/book');
             }).catch(function (error) {

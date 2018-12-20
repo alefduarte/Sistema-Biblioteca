@@ -36,7 +36,7 @@ export default class Books extends Component {
                 author_id: this.state.author_id
             })
             .then(response => {
-                console.log('successfully edited the publisher', response.data.book);
+                console.log('successfully edited the book', response.data.book);
                 // set state
                 this.props.history.push('/book');
             }).catch((error) => {
